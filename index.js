@@ -6,5 +6,16 @@ function updateObjectWithKeyAndValue(obj, key, val) {
 }
 
 function destructivelyUpdateObjectWithKeyAndValue(obj, key, val) {
-  return Object.assign();
+  return Object.assign(obj, {[key]: value});
+}
+
+function deleteFromObjectByKey(obj, key) {
+  var clone = Object.assign({}, obj);
+  delete clone[key];
+  return clone;
+}
+
+function destructivelyDeleteFromObjectByKey(obj, key) {
+  delete obj[key];
+  return obj;
 }
